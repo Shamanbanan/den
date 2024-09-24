@@ -53,49 +53,73 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
     scrollTo();
+
+     // Модальное окно
+     const modal = document.getElementById('image-modal');
+     const modalImg = document.getElementById('modal-img');
+     const captionText = document.getElementById('modal-caption');
+     const closeModal = document.querySelector('.modal-close');
+     const images = document.querySelectorAll('.gallery-item img');
+ 
+     let currentIndex = 0;
+ 
+     images.forEach(function(img, index) {
+         img.addEventListener('click', function() {
+             modal.style.display = 'block';
+             modalImg.src = this.src;
+             captionText.innerHTML = this.alt;
+             document.body.classList.add('modal-open');
+             currentIndex = index;
+         });
+     });
+ 
+     closeModal.addEventListener('click', function() {
+         modal.style.display = 'none';
+         document.body.classList.remove('modal-open');
+     });
+ 
+     modal.addEventListener('click', function(e) {
+         if (e.target === modal) {
+             modal.style.display = 'none';
+             document.body.classList.remove('modal-open');
+         }
+     });
+ 
+     document.addEventListener('keydown', function(e) {
+         if (e.key === 'Escape' && modal.style.display === 'block') {
+             modal.style.display = 'none';
+             document.body.classList.remove('modal-open');
+         }
+         // Навигация с клавиатуры
+         if (e.key === 'ArrowLeft' && modal.style.display === 'block') {
+             showImage(currentIndex - 1);
+         }
+         if (e.key === 'ArrowRight' && modal.style.display === 'block') {
+             showImage(currentIndex + 1);
+         }
+     });
+ 
+     // Функции переключения изображений
+     function showImage(index) {
+         if (index >= images.length) { index = 0; }
+         if (index < 0) { index = images.length - 1; }
+         modalImg.src = images[index].src;
+         captionText.innerHTML = images[index].alt;
+         currentIndex = index;
+     }
+ 
+     // Кнопки навигации
+     const prevButton = document.querySelector('.modal-prev');
+     const nextButton = document.querySelector('.modal-next');
+ 
+     prevButton.addEventListener('click', function(e) {
+         e.stopPropagation();
+         showImage(currentIndex - 1);
+     });
+ 
+     nextButton.addEventListener('click', function(e) {
+         e.stopPropagation();
+         showImage(currentIndex + 1);
+     });
 });
 
-// Модальное окно
-document.addEventListener('DOMContentLoaded', function() {
-    // Ваш существующий код...
-
-    // Получаем модальное окно и элементы внутри него
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-img');
-    const captionText = document.getElementById('modal-caption');
-    const closeModal = document.querySelector('.modal-close');
-
-    // Получаем все изображения в галерее
-    const images = document.querySelectorAll('.gallery-item img');
-
-    images.forEach(function(img) {
-        img.addEventListener('click', function() {
-            modal.style.display = 'block';
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            document.body.classList.add('modal-open');
-        });
-    });
-
-    // Закрытие модального окна при нажатии на крестик
-    closeModal.addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-    });
-
-    // Закрытие модального окна при нажатии вне изображения
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            document.body.classList.remove('modal-open');
-        }
-    });
-
-    // Закрытие модального окна при нажатии на клавишу "Escape"
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            document.body.classList.remove('modal-open');
-        }
-    });
-});
