@@ -69,7 +69,7 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    background-image: url('img/Bg_1.jpg');
+    background-image: url('Bg_1.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
