@@ -54,3 +54,48 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     scrollTo();
 });
+
+// Модальное окно
+document.addEventListener('DOMContentLoaded', function() {
+    // Ваш существующий код...
+
+    // Получаем модальное окно и элементы внутри него
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const captionText = document.getElementById('modal-caption');
+    const closeModal = document.querySelector('.modal-close');
+
+    // Получаем все изображения в галерее
+    const images = document.querySelectorAll('.gallery-item img');
+
+    images.forEach(function(img) {
+        img.addEventListener('click', function() {
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            document.body.classList.add('modal-open');
+        });
+    });
+
+    // Закрытие модального окна при нажатии на крестик
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+    });
+
+    // Закрытие модального окна при нажатии вне изображения
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
+
+    // Закрытие модального окна при нажатии на клавишу "Escape"
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
+});

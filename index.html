@@ -8,6 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Подключение иконок Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-..."
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,6 +26,7 @@
             <ul class="nav-list">
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#care">Уход</a></li>
+                <li><a href="#works">Наши работы</a></li>
                 <li><a href="#authenticity">Натуральность</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -31,7 +39,7 @@
         <div class="overlay"></div>
         <div class="hero-content container">
             <h1>Изделия из натуральной кожи</h1>
-            <p>Благодарим вас за приобретение нашего изделия. Получите советы по уходу и гайд по определению натуральности кожи.</p>
+            <p>Наша семейная кожевенная мастерская благодарит вас за приобретения изделия и предлагает советы по использованию и подарок - гайд о том как определить натуральность кожи</p>
             <a href="#about" class="btn">Узнать больше</a>
         </div>
     </section>
@@ -46,9 +54,6 @@
                     <div class="about-text">
                         <p>Мы — молодая команда, увлеченная кожевенным делом. Наша цель — показать, что ручная работа может быть качественнее и долговечнее машинного труда. Каждое изделие — это частичка нашей души и заботы о вас.</p>
                     </div>
-                    <!-- <div class="about-image">
-                        <img src="about-image.jpg" alt="О нас">
-                    </div> -->
                 </div>
                 <div class="stats">
                     <div class="stat">
@@ -67,43 +72,70 @@
             </div>
         </section>
 
-        <!-- Рекомендации по уходу -->
-        <section id="care" class="care section">
-            <div class="container">
-                <h2>Рекомендации по уходу</h2>
-                <div class="care-content">
-                    <div class="care-steps">
-                        <div class="step">
-                            <i class="fas fa-gift"></i>
-                            <h3>Используйте подарочную салфетку</h3>
-                            <p>Протирайте изделие салфеткой без спирта для поддержания его внешнего вида. Это поможет сохранить первоначальный блеск и предотвратить появление пятен.</p>
-                        </div>
-                        <div class="step">
-                            <i class="fas fa-brush"></i>
-                            <h3>Обработка специальным воском</h3>
-                            <p>Регулярно наносите специальный воск для кожи. Он питает материал, сохраняя его мягкость и предотвращая растрескивание при длительном использовании.</p>
-                        </div>
-                        <div class="step">
-                            <i class="fas fa-wind"></i>
-                            <h3>Удаление царапин с кожи Crazy Horse</h3>
-                            <p>Нагрейте поверхность изделия феном на среднем режиме и аккуратно протрите мягкой тканью. Это позволит устранить мелкие царапины и вернуть коже однородный цвет.</p>
-                        </div>
-                        <div class="step">
-                            <i class="fas fa-tint"></i>
-                            <h3>Избегайте длительного контакта с водой</h3>
-                            <p>Кожа может впитывать влагу, что приводит к деформации и потере цвета. Если изделие намокло, аккуратно промокните его сухой тканью и дайте высохнуть естественным путем.</p>
-                        </div>
-                    </div>
-                    <!-- <div class="care-image">
-                        <img src="care-guide.jpg" alt="Рекомендации по уходу">
-                    </div> -->
-                </div>
-                <div class="care-contact">
-                    <p>Если у вас есть вопросы, свяжитесь с нами в <a href="https://t.me/Denis5442" target="_blank">Telegram</a>.</p>
-                </div>
+<!-- Рекомендации по уходу -->
+<section id="care" class="care section">
+    <div class="container">
+        <h2>Рекомендации по уходу</h2>
+        <div class="care-cards">
+            <div class="care-card">
+                <i class="fas fa-gift"></i>
+                <h3>Используйте подарочную салфетку</h3>
+                <p>Протирайте изделие салфеткой без спирта для поддержания его внешнего вида. Это поможет сохранить первоначальный блеск и предотвратить появление пятен.</p>
             </div>
-        </section>
-
+            <div class="care-card">
+                <i class="fas fa-brush"></i>
+                <h3>Обработка специальным воском</h3>
+                <p>Регулярно наносите специальный воск для кожи. Он питает материал, сохраняя его мягкость и предотвращая растрескивание при длительном использовании.</p>
+            </div>
+            <div class="care-card">
+                <i class="fas fa-wind"></i>
+                <h3>Удаление царапин с кожи Crazy Horse</h3>
+                <p>Нагрейте поверхность изделия феном на среднем режиме и аккуратно протрите мягкой тканью. Это позволит устранить мелкие царапины и вернуть коже однородный цвет.</p>
+            </div>
+            <div class="care-card">
+                <i class="fas fa-tint"></i>
+                <h3>Избегайте длительного контакта с водой</h3>
+                <p>Кожа может впитывать влагу, что приводит к деформации и потере цвета. Если изделие намокло, аккуратно промокните его сухой тканью и дайте высохнуть естественным путем.</p>
+            </div>
+        </div>
+        <div class="care-contact">
+            <p>Если у вас есть вопросы, свяжитесь с нами в <a href="https://t.me/Denis5442" target="_blank">Telegram</a>.</p>
+        </div>
+    </div>
+</section>
+<!-- Наши работы -->
+<section id="works" class="works section">
+    <div class="container">
+        <h2>Наши работы</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="/img/work_1.JPG" alt="Изделие 1" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/img/work_2.JPG" alt="Изделие 2" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/img/work_3.JPG" alt="Изделие 3" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/img/work_4.JPG" alt="Изделие 4" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/img/work_5.JPG" alt="Изделие 5" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/img/work_6.JPG" alt="Изделие 6" loading="lazy">
+            </div>
+            <!-- Добавьте больше элементов по необходимости -->
+        </div>
+    </div>
+</section>
+<!-- Модальное окно -->
+<div id="image-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div id="modal-caption"></div>
+</div>
         <!-- Как отличить натуральную кожу -->
         <section id="authenticity" class="authenticity section">
             <div class="container">
@@ -125,15 +157,11 @@
                         <p>Натуральная кожа тяжелее искусственных заменителей.</p>
                     </div>
                     <div class="auth-card">
-                        <i class="fas fa-nose"></i>
+                        <i class="fas fa-leaf"></i>
                         <h3>Запах</h3>
                         <p>Имеет характерный натуральный запах без химических примесей.</p>
                     </div>
-                    <div class="auth-card">
-                        <i class="fas fa-tint"></i>
-                        <h3>Проверка влагой</h3>
-                        <p>Впитывает воду, оставляя временное темное пятно.</p>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -151,10 +179,10 @@
                         <i class="fas fa-envelope"></i>
                         <p><a href="mailto:denis.bulda@yandex.ru">denis.bulda@yandex.ru</a></p>
                     </div>
-                    <div class="contact-card">
+                    <!-- <div class="contact-card">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>г. Москва, ул. Примерная, д. 1</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -163,7 +191,7 @@
     <!-- Футер -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 BYDEN. Все права защищены.</p>
+            <!-- <p>&copy; 2024 BYDEN. Все права защищены.</p> -->
             <ul class="social-links">
                 <li><a href="#"><i class="fab fa-vk"></i></a></li>
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
